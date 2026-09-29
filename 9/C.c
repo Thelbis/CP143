@@ -47,6 +47,10 @@ int main() {
   printf("||");
   printVector(vec2);
   printf("|| = %.3f\n\n", normVec2);
+
+  emptyVector(&vec1);
+  emptyVector(&vec2);
+  return 0;
 }
 
 void fillVector(Vector *vPtr) {
@@ -93,4 +97,8 @@ double norm(Vector v) {
   double norm2;
   dotProduct(v, v, &norm2);
   return sqrt(norm2);
+}
+
+void emptyVector(Vector *vPtr) {
+  free(vPtr->data);
 }
